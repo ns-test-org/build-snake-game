@@ -124,7 +124,7 @@ export default function SnakeGame() {
   }, [direction, food, gameStarted, gameOver, generateFood]);
 
   return (
-    <div className="relative h-[100dvh] w-full overflow-hidden bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white flex items-center justify-center">
+    <div className="relative h-[100dvh] w-full overflow-hidden bg-orange-500 text-white flex items-center justify-center">
       <div className="flex flex-col items-center gap-6">
         <div className="text-center">
           <h1 className="text-5xl font-bold mb-2">Snake Game</h1>
@@ -209,4 +209,5 @@ export default function SnakeGame() {
     </div>
   );
 }
+
 
