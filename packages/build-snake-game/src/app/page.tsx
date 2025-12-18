@@ -152,7 +152,6 @@ export default function SnakeGame() {
                 width: CELL_SIZE - 2,
                 height: CELL_SIZE - 2,
                 backgroundColor: index === 0 ? '#4ade80' : '#22c55e',
-                transition: 'all 0.05s linear',
               }}
             />
           ))}
@@ -211,6 +210,7 @@ export default function SnakeGame() {
     </div>
   );
 }
+
 
 
 
