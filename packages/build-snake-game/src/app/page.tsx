@@ -41,11 +41,7 @@ export default function SnakeGame() {
   };
 
   const checkCollision = (head: Position, snakeBody: Position[]) => {
-    // Wall collision
-    if (head.x < 0 || head.x >= GRID_SIZE || head.y < 0 || head.y >= GRID_SIZE) {
-      return true;
-    }
-    // Self collision
+    // Self collision only (no wall collision)
     for (let i = 0; i < snakeBody.length; i++) {
       if (head.x === snakeBody[i].x && head.y === snakeBody[i].y) {
         return true;
@@ -99,6 +95,12 @@ export default function SnakeGame() {
             head.x += 1;
             break;
         }
+
+        // Wrap around walls
+        if (head.x < 0) head.x = GRID_SIZE - 1;
+        if (head.x >= GRID_SIZE) head.x = 0;
+        if (head.y < 0) head.y = GRID_SIZE - 1;
+        if (head.y >= GRID_SIZE) head.y = 0;
 
         if (checkCollision(head, prevSnake)) {
           setGameOver(true);
@@ -209,5 +211,7 @@ export default function SnakeGame() {
     </div>
   );
 }
+
+
 
 
